@@ -19,8 +19,11 @@
         <section class="user-section">
             <h2>Registro de Presença</h2>
             <form id="user-form">
-                <label for="name">Nome:</label>
+                <label for="name">Nome do culto:</label>
                 <input type="text" id="name" name="name" required>
+
+                <label for="event-date">Data do Evento:</label>
+                <input type="date" id="event-date" name="event-date">
 
                 <label for="category">Categoria:</label>
                 <select id="category" name="category" required>
@@ -31,8 +34,9 @@
                     <!-- Outras opções de categoria -->
                 </select>
 
-                <label for="event-date">Data do Evento:</label>
-                <input type="date" id="event-date" name="event-date">
+                <label for="quantity">Quantidade:</label>
+                <input type="number" id="quantity" name="quantity" required>
+
 
                 <button type="submit">Confirmar</button>
             </form>

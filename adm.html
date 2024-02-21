@@ -17,7 +17,7 @@
     </header>
     <main>
         <section class="attendance">
-            <h2>Registro de Presença</h2>
+            <h2>Relatório do culto</h2>
             <form id="attendance-form">
                 <label for="date">Data do Culto:</label>
                 <input type="date" id="date" name="date" required>
@@ -29,15 +29,21 @@
             </form>
         </section>
         <section class="attendance-details">
-            <h2>Detalhes da Presença</h2>
-            <label for="filter-date">Filtrar por Data:</label>
-            <input type="date" id="filter-date" name="filter-date">
-            <label for="filter-name">Filtrar por Nome:</label>
-            <input type="text" id="filter-name" name="filter-name">
+            <h2>Filtros</h2>
+            <label for="filter-option">Escolha o tipo de relatório:</label>
+            <select id="filter-option" name="filter-option">
+                <option value="culto">Relatório do culto</option>
+                <option value="mensal">Relatório mensal</option>
+                <option value="anual">Relatório anual</option>
+            </select>
+
+            <div id="date-filter">
+                <label for="filter-date">Filtrar por Data:</label>
+                <input type="date" id="filter-date" name="filter-date">
+            </div>
+
             <button id="filter-button">Filtrar</button>
-            <div id="attendance-results">
-                <!-- Os detalhes da presença serão exibidos aqui -->
-            </div><br>
+            <br> <br>
             <button id="generate-report">Gerar Relatório</button>
         </section>
     </main>
@@ -47,7 +53,8 @@
 
 </html>
 
-<script>document.getElementById("attendance-form").addEventListener("submit", function (event) {
+<script>
+    document.getElementById("attendance-form").addEventListener("submit", function (event) {
         event.preventDefault();
         const date = document.getElementById("date").value;
         const attendance = document.getElementById("attendance").value;
@@ -57,16 +64,30 @@
     });
 
     document.getElementById("filter-button").addEventListener("click", function () {
-        const filterDate = document.getElementById("filter-date").value;
+        const filterOption = document.getElementById("filter-option").value;
+        let filterDate = null;
 
-        // Aqui você pode enviar a data de filtro para o backend
-        // e receber os detalhes da presença com base no filtro
-        // e atualizar o conteúdo dentro de #attendance-results
+        if (filterOption === "culto") {
+            filterDate = document.getElementById("filter-date").value;
+            // Aqui você pode enviar a data de filtro para o backend
+            // e receber os detalhes da presença com base no filtro
+            // e atualizar o conteúdo dentro de #attendance-results
+        } else if (filterOption === "mensal") {
+            // Lógica para filtro mensal
+        } else if (filterOption === "anual") {
+            // Lógica para filtro anual
+        }
     });
 
     document.getElementById("generate-report").addEventListener("click", function () {
-        // Aqui você pode enviar uma solicitação para o backend
-        // para gerar um relatório com base nos dados armazenados
-        // e exibir o relatório para o usuário
+        const filterOption = document.getElementById("filter-option").value;
+
+        if (filterOption === "culto") {
+            // Lógica para gerar relatório do culto
+        } else if (filterOption === "mensal") {
+            // Lógica para gerar relatório mensal
+        } else if (filterOption === "anual") {
+            // Lógica para gerar relatório anual
+        }
     });
 </script>
