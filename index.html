@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website da Igreja</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/image-removebg-preview.png" alt="Logo da Igreja">
+        </div>
+        <h1>Bem-vindo!</h1>
+    </header>
+    <main>
+        <section class="user-section">
+            <h2>Registro de Presença</h2>
+            <form id="user-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="category">Categoria:</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Selecione uma categoria</option>
+                    <option value="pastor">Pastor</option>
+                    <option value="adult">Adulto</option>
+                    <option value="child">Criança</option>
+                    <!-- Outras opções de categoria -->
+                </select>
+
+                <label for="event-date">Data do Evento:</label>
+                <input type="date" id="event-date" name="event-date">
+
+                <button type="submit">Confirmar</button>
+            </form>
+        </section>
+        <a href="adm.html">
+            <h3>Ver página adm</h3>
+        </a>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração da Igreja</title>
+    <link rel="stylesheet" href="adm.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/image-removebg-preview.png" alt="Logo da Igreja">
+        </div>
+        <h1>Administração</h1>
+    </header>
+    <main>
+        <section class="attendance">
+            <h2>Registro de Presença</h2>
+            <form id="attendance-form">
+                <label for="date">Data do Culto:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="attendance">Presença:</label>
+                <input type="number" id="attendance" name="attendance" min="0" required>
+
+                <button type="submit">Salvar</button>
+            </form>
+        </section>
+        <section class="attendance-details">
+            <h2>Detalhes da Presença</h2>
+            <label for="filter-date">Filtrar por Data:</label>
+            <input type="date" id="filter-date" name="filter-date">
+            <label for="filter-name">Filtrar por Nome:</label>
+            <input type="text" id="filter-name" name="filter-name">
+            <button id="filter-button">Filtrar</button>
+            <div id="attendance-results">
+                <!-- Os detalhes da presença serão exibidos aqui -->
+            </div><br>
+            <button id="generate-report">Gerar Relatório</button>
+        </section>
+    </main>
+
+    <script src="admin-script.js"></script>
+</body>
+
+</html>
+
+<script>document.getElementById("attendance-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const date = document.getElementById("date").value;
+        const attendance = document.getElementById("attendance").value;
+
+        // Aqui você pode enviar os dados para o backend
+        // para salvar o registro de presença
+    });
+
+    document.getElementById("filter-button").addEventListener("click", function () {
+        const filterDate = document.getElementById("filter-date").value;
+
+        // Aqui você pode enviar a data de filtro para o backend
+        // e receber os detalhes da presença com base no filtro
+        // e atualizar o conteúdo dentro de #attendance-results
+    });
+
+    document.getElementById("generate-report").addEventListener("click", function () {
+        // Aqui você pode enviar uma solicitação para o backend
+        // para gerar um relatório com base nos dados armazenados
+        // e exibir o relatório para o usuário
+    });
+</script>
