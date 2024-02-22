@@ -70,25 +70,22 @@ button {
     background-color: orange;
     color: black;
     font-size: 1.3em;
-    width: 100%;
-    /* Modificado para ocupar 100% da largura do container */
+    width: 50%;
     height: 40px;
-    /* Modificado para uma altura fixa */
     border-radius: 10px;
     border: none;
     font-weight: bold;
     cursor: pointer;
-    /* Adicionado cursor pointer */
+    align-items: center;
+    align-self: center;
 }
 
 button:hover {
     background-color: #ff8c00;
-    /* Cor alterada no hover */
 }
 
 @media (max-width: 768px) {
     .container {
         width: 95%;
-        /* Alterado para maior responsividade em telas menores */
     }
 }

@@ -10,41 +10,25 @@
 
 <body>
     <header>
-        <div class="logo">
-            <img src="img/image-removebg-preview.png" alt="Logo da Igreja">
-        </div>
         <h1>Administração</h1>
     </header>
     <main>
         <section class="attendance">
             <h2>Relatório do culto</h2>
             <form id="attendance-form">
-                <label for="date">Data do Culto:</label>
-                <input type="date" id="date" name="date" required>
+                <label for="filter-option">Escolha o tipo de relatório:</label>
+                <select id="filter-option" name="filter-option">
+                    <option value="culto">Relatório do culto</option>
+                    <option value="mensal">Relatório mensal</option>
+                    <option value="anual">Relatório anual</option>
+                </select>
+                <div class="div">
+                    <label for="date">Data do Culto:</label>
+                    <input type="date" id="date" name="date" required>
 
-                <label for="attendance">Presença:</label>
-                <input type="number" id="attendance" name="attendance" min="0" required>
-
-                <button type="submit">Salvar</button>
+                    <button type="submit">Selecionar</button>
+                </div>
             </form>
-        </section>
-        <section class="attendance-details">
-            <h2>Filtros</h2>
-            <label for="filter-option">Escolha o tipo de relatório:</label>
-            <select id="filter-option" name="filter-option">
-                <option value="culto">Relatório do culto</option>
-                <option value="mensal">Relatório mensal</option>
-                <option value="anual">Relatório anual</option>
-            </select>
-
-            <div id="date-filter">
-                <label for="filter-date">Filtrar por Data:</label>
-                <input type="date" id="filter-date" name="filter-date">
-            </div>
-
-            <button id="filter-button">Filtrar</button>
-            <br> <br>
-            <button id="generate-report">Gerar Relatório</button>
         </section>
     </main>
 
@@ -57,7 +41,6 @@
     document.getElementById("attendance-form").addEventListener("submit", function (event) {
         event.preventDefault();
         const date = document.getElementById("date").value;
-        const attendance = document.getElementById("attendance").value;
 
         // Aqui você pode enviar os dados para o backend
         // para salvar o registro de presença
